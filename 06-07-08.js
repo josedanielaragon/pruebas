@@ -11,8 +11,13 @@ function crearClasePersona() {
       // Inicializar las propiedades de la persona con los valores recibidos como argumento
 
       // Tu código aca:
+      this.nombre = nombre;
+      this.edad = edad;
+      this.hobbies = hobbies;
+      this.amigos = amigos;
 
     }
+    
 
     addFriend(nombre, edad) {
       // El método 'addFriend' recibe un string 'nombre' y un entero 'edad' y debe agregar un objeto:
@@ -20,6 +25,8 @@ function crearClasePersona() {
       // No debe retornar nada.
 
       // Tu código aca:
+      let amigo = {nombre: nombre, edad: edad};
+      this.amigos.push(amigo);
 
     }
 
@@ -27,7 +34,9 @@ function crearClasePersona() {
       // El método 'addHobby' recibe un string 'hobby' y debe agregarlo al arreglo de hobbies de la persona.
       // No debe retornar nada.
 
-      // Tu código aca:
+      // Tu código aca:ç
+      this.hobbies.push(hobby);
+
 
     }
     getFriends() {
@@ -38,8 +47,20 @@ function crearClasePersona() {
       // persona.getFriends() debería devolver ['martin', 'toni']
 
       // Tu código aca:
-
+  
+      let respuesta = [];
+      for(let elemento of this.amigos) {
+        respuesta.push(elemento.nombre);
+      }
+      return respuesta;
     }
+
+
+/*  var nombreAmigos = [];
+    for(let i = 0; this.amigos.length; i++) {
+       nombreAmigos.push(this.amigos[].nombre);
+    } 
+    return nombreAmigos;  */
 
     getHobbies() {
       // El método 'getHobbies' debe retornar un arreglo con los hobbies de la persona
@@ -47,7 +68,8 @@ function crearClasePersona() {
       // persona.getHobbies() debe devolver ['correr', 'dormir', 'nadar']
 
       // Tu código aca:
-
+      return this.hobbies; 
+ 
     }
 
     getPromedioEdad() {
@@ -66,7 +88,11 @@ function crearClasePersona() {
       // persona.getPromedioEdad() debería devolver 29 ya que (33 + 25) / 2 = 29
 
       // Tu código aca:
-
+      let sumatoria = 0;
+      for(let num of this.amigos) {
+         sumatoria += num.edad; 
+      }
+      return sumatoria / 2;
     }
   };
 
